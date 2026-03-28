@@ -63,7 +63,7 @@ partners_btn = ReplyKeyboardMarkup(
         [KeyboardButton(text="🛢 ROWE"), KeyboardButton(text="💒 TURON")],
         [KeyboardButton(text="🚘 AVTOMAKTAB"), KeyboardButton(text="🛒 F-MART")],
         [KeyboardButton(text="🎓 RARE"), KeyboardButton(text="🎤 OZODBEK")],
-        [KeyboardButton(text="⬅️ Orqaga")]
+        [KeyboardButton(text="⬅️ Orqaga"), KeyboardButton(text="👕 EMIRAN")]
     ],
     resize_keyboard=True
 )
@@ -587,6 +587,38 @@ async def ozodbek(message: Message):
             "+998 20 026 88 58\n"
             "+998 88 206 88 58\n\n"
             "✨ Sizning bayramingiz — bizning mas’uliyat!"
+        ),
+        reply_markup=keyboard
+    )
+
+# ================= EMIRAN =================
+@dp.message(F.text == "👕 EMIRAN")
+async def emiran(message: Message):
+    photo = FSInputFile("images/emiran.jpg")  # rasm nomini shunaqa qilib qo‘ying
+
+    keyboard = InlineKeyboardMarkup(
+        inline_keyboard=[
+            [InlineKeyboardButton(
+                text="📸 Instagram",
+                url="https://instagram.com/emiran_qarshi_atlas"
+            )],
+            [InlineKeyboardButton(
+                text="📍 Lokatsiya",
+                url="https://maps.google.com/?q=Qarshi+Atlas+Savdo+Markazi"
+            )]
+        ]
+    )
+
+    await message.answer_photo(
+        photo=photo,
+        caption=(
+            "👕 EMIRAN | ERKAKLAR KIYIM DO‘KONI\n\n"
+            "📍 Qarshi Atlas Savdo Markazi\n\n"
+            "👔 Erkaklar uchun zamonaviy kiyimlar\n"
+            "✨ Sifat va stil bir joyda\n\n"
+            "🕘 Ish vaqti: 09:00 - 23:00\n\n"
+            "🚚 Dastafka xizmati mavjud\n"
+            "📞 Tel: +998888300698"
         ),
         reply_markup=keyboard
     )
